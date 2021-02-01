@@ -9,10 +9,11 @@ export default function Home() {
 	const setNewLetter = e => {
 		const { value, id } = e;
 		letter[id] = value;
+		e.n;
 	};
 
 	const submitLetters = () => {
-		const acceptedQuery = letter.every(e => e.match(/^[a-ö]$/));
+		const acceptedQuery = letter.length === 9 && letter.every(e => e.match(/^[a-ö]$/));
 		console.log(acceptedQuery);
 		if (acceptedQuery) {
 			router.push(`letters/${letter.join('')}`);
@@ -29,6 +30,7 @@ export default function Home() {
 							key={i}
 							className={`${i === 4 && 'bg-black text-white'} text-center text-3xl`}
 							type='text'
+							maxlength='1'
 							onChange={event => setNewLetter(event.target)}
 						/>
 					))}
