@@ -4,7 +4,7 @@ import BlockSymbol from './svg/BlockSymbol';
 
 export default function BottomNav({ dir, setDir }) {
 	return (
-		<div className='h-16 w-full flex shadow-2xl justify-around items-center'>
+		<div className='h-16 w-full flex shadow-medium justify-around items-center'>
 			<div className='w-16 h-full flex justify-center items-center' onClick={() => setDir('block')}>
 				<div
 					className={`flex justify-center items-center rounded-full overflow-visible overflow-visible duration-200 bg-red-400 cursor-pointer ${

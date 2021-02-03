@@ -10,10 +10,11 @@ export default function BlockScreen() {
 	const setNewLetter = e => {
 		const { value } = e.target;
 		if (value.length > 0) {
-			setLetter(value.split(''));
+			setLetter(value.split('').map(e => e));
 		} else {
 			setLetter([]);
 		}
+		console.log(value.split(''));
 	};
 
 	const submitLetters = () => {
@@ -33,36 +34,36 @@ export default function BlockScreen() {
 	}, [letter]);
 
 	return (
-		<div className='w-full h-80 py-10 flex flex-col items-center justify-between'>
-			<div className='w-20 h-20 grid grid-cols-3 gap-1 bg-red-400 transform -rotate-12 text-red-400 rounded-xl border-4 border-red-400 overflow-hidden'>
+		<div className='w-full h-layout-top flex flex-col items-center justify-evenly'>
+			<div className='w-24 h-24 grid grid-cols-3 gap-1 bg-red-400 transform -rotate-12 text-red-400 rounded-xl border-4 border-red-400 overflow-hidden'>
 				{[...new Array(9)].map((_e, i) => (
 					<input
 						id={i}
 						key={i}
 						className={`${
 							i === 4 && 'bg-red-400 text-white'
-						} text-center text-sm font-bold pointer-events-none uppercase font-serif`}
+						} text-center text-lg font-bold pointer-events-none uppercase font-serif`}
 						type='text'
-						value={letter[i]}
+						defaultValue={letter[i] || ''}
 					/>
 				))}
 			</div>
-
-			<input
-				type='text'
-				maxLength='9'
-				className=' text-xl px-1 w-36 tracking-widest border-2 border-black rounded font-serif'
-				onChange={setNewLetter}
-			/>
-
-			<button
-				className={`w-36 h-10 text-white font-bold rounded-md ${
-					submitAble ? 'bg-black' : 'bg-gray-200'
-				}`}
-				onClick={submitLetters}
-			>
-				Find Word
-			</button>
+			<div className='h-24 flex flex-col justify-between'>
+				<input
+					type='text'
+					maxLength='9'
+					className=' text-xl px-2 w-full h-10 tracking-widest border-2 border-black rounded font-serif'
+					onKeyUp={setNewLetter}
+				/>
+				<button
+					className={`w-full h-10 text-white font-bold rounded ${
+						submitAble ? 'bg-black' : 'bg-gray-200 pointer-events-none'
+					}`}
+					onClick={submitLetters}
+				>
+					Find Word
+				</button>
+			</div>
 		</div>
 	);
 }
