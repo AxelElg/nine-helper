@@ -34,7 +34,7 @@ export default function BlockScreen() {
 	}, [letter]);
 
 	return (
-		<div className='w-full h-layout-top flex flex-col items-center justify-evenly'>
+		<div className='w-full h-layout-top p-6 flex flex-col items-center justify-evenly'>
 			<div className='w-24 h-24 grid grid-cols-3 gap-1 bg-red-400 transform -rotate-12 text-red-400 rounded-xl border-4 border-red-400 overflow-hidden'>
 				{[...new Array(9)].map((_e, i) => (
 					<input
