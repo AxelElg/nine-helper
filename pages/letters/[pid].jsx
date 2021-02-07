@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout';
-import wordFinder from '../../components/functions/wordFinder.js';
+import data from '../../components/data/data.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
@@ -12,6 +12,20 @@ export default function Letters() {
 
 	const goBack = () => {
 		router.back();
+	};
+
+	const wordFinder = arr => {
+		return data
+			.filter(word => {
+				const arrCopy = [...arr.join('')];
+				return [...word].every(letter => {
+					if (arrCopy.includes(letter)) {
+						arrCopy.splice(arrCopy.indexOf(letter), 1);
+						return true;
+					}
+				});
+			})
+			.sort((a, b) => b.length - a.length);
 	};
 
 	useEffect(() => {
