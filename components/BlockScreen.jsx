@@ -10,11 +10,10 @@ export default function BlockScreen() {
 	const setNewLetter = e => {
 		const { value } = e.target;
 		if (value.length > 0) {
-			setLetter(value.split('').map(e => e));
+			setLetter(value.split(''));
 		} else {
 			setLetter([]);
 		}
-		console.log(value.split(''));
 	};
 
 	const submitLetters = () => {
