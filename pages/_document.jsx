@@ -10,7 +10,7 @@ class MyDocument extends Document {
 		return (
 			<Html lang='en'>
 				<Head>
-					<title>Nine helper</title>
+					{/* <title>Nine helper</title> */}
 					<link rel='manifest' href='/manifest.json' />
 					<link rel='icon' href='/images/icons-144.png' />
 					<link rel='apple-touch-icon' href='/images/icons-144.png' />
