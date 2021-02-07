@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout';
-import wordFinder from '../../components/functions/wordFinder';
+import wordFinder from '../../components/functions/wordFinder.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
