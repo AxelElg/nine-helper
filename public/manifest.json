@@ -1,0 +1,37 @@
+{
+  "start_url": ".",
+  "name": "Nine Helper",
+  "short_name": "Nine Helper",
+  "background_color": "#fff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#fff",
+  "description": "A helper app which solves nine letter puzzles",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/icons-144.png",
+      "type": "image/png",
+      "size": "144x144",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icons-192.png",
+      "type": "image/png",
+      "size": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icons-192.png",
+      "type": "image/png",
+      "size": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/images/icons-512.png",
+      "type": "image/png",
+      "size": "512x512",
+      "purpose": "any"
+    }
+  ]
+}

@@ -42,7 +42,7 @@ export default function BlockScreen() {
 						key={i}
 						className={`${
 							i === 4 && 'bg-red-400 text-white'
-						} text-center text-lg font-bold pointer-events-none uppercase font-serif`}
+						} text-center text-md font-bold pointer-events-none uppercase font-serif`}
 						type='text'
 						defaultValue={letter[i] || ''}
 					/>
