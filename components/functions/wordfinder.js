@@ -14,4 +14,4 @@ const wordFinder = arr => {
 		.sort((a, b) => b.length - a.length);
 };
 
-module.exports = wordFinder;
+export default wordFinder;
